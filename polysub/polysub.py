@@ -121,12 +121,14 @@ if __name__ == '__main__':
     with open('zen.txt') as file:
         text = file.read()
 
+    # Build three different substitution ciphers
     key_a = build_map()
     key_b = build_map()
     key_c = build_map()
     keys = [key_a, key_b, key_c]
 
-    print(default_string())
+    print(f'Standard String:\n{default_string()}')
+    print('\nThree ciphers being used:')
     print(keystring(key_a))
     print(keystring(key_b))
     print(keystring(key_c))
@@ -135,6 +137,8 @@ if __name__ == '__main__':
     result = translate(text, keys)
     with open('result.txt', 'w') as file:
         file.write(result)
+
+    # Save key to later rebuild original text
     with open('key.txt', 'w') as file:
         keys_string = keystrings(keys)
         file.write(keys_string)
