@@ -6,7 +6,7 @@ https://www.schneier.com/books/applied-cryptography/
 
 ---
 
-## Polysub
+## Polysub - Polyalphabetic Substitution Cypher
 
 Similar to a [simple substitution cipher](https://en.wikipedia.org/wiki/Substitution_cipher), but uses multiple cipher keys. To encrypt a text a process of *"rolling"* through the ciphers for each character in the original text is used.
 To decrypt simply use the same process for decrypting a simple substitution cipher, making sure to *"roll"* through the ciphers in the same order and starting position.
