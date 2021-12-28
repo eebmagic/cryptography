@@ -102,7 +102,7 @@ def validate_string(string):
     '''
     Validates that a string is a unique set of all ascii chars.
     '''
-    assert len(string) == 95, "String must be 95 chars long"
+    assert len(string) == len(default_string()), "String must be 95 chars long"
     assert len(set(string)) == len(string), "String must only have chars appearing once"
 
     return True

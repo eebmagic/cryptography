@@ -4,3 +4,5 @@
         - [ ] Add .decrypt(encrypted, ciphers) -> plainText
     - [ ] Add option for specific number of ciphers to generate
     - [ ] Add separate function to save to plaintext files
+
+- [ ] Change XOR to output as bytes
