@@ -4,11 +4,21 @@ use std::io::BufReader;
 use std::io::BufWriter;
 use std::io::Write;
 use std::fs::File;
+use std::env;
 
 fn main() -> io::Result<()> {
+    /*
+        Load args in format:
+            xor [input file] [key] [output filename]
+    */
+
+    // Load args
+    let args: Vec<String> = env::args().collect();
+
     // Set key values
-    let key: u8 = 123;
-    let filename = "source.txt";
+    let key: u8 = args[2].parse::<u8>().unwrap();
+    let filename: &String = &args[1];
+    let out_name: &String = &args[3];
 
     // Setup file readers
     let f = File::open(filename)?;
@@ -26,8 +36,9 @@ fn main() -> io::Result<()> {
         vec.push(newvalue);
     }
 
+    println!("\nsource file: {}\noutput file: {}", filename, out_name);
     let c: &[u8] = &vec;
-    let mut result_buffer = BufWriter::new(File::create("output.txt")?);
+    let mut result_buffer = BufWriter::new(File::create(out_name)?);
     result_buffer.write(c)?;
     result_buffer.flush()?;
 
