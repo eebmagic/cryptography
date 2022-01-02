@@ -5,4 +5,4 @@
     - [ ] Add option for specific number of ciphers to generate
     - [ ] Add separate function to save to plaintext files
 
-- [ ] Change XOR to output as bytes
+- [x] Change XOR to output as bytes (now done in rust version)

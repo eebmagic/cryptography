@@ -32,7 +32,7 @@ fn main() -> io::Result<()> {
     let mut vec = Vec::new();
     for value in buffer {
         let newvalue = value ^ key;
-        println!("BYTE: {}, {} -> {}", value, value as char, newvalue as char);
+        // println!("BYTE: {}, {} -> {}", value, value as char, newvalue as char);
         vec.push(newvalue);
     }
 
